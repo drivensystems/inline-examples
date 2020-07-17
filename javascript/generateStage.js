@@ -63,7 +63,7 @@ const examples = [
         ]
     },
     {
-        description: '500 upfront then 5 monthly Payments',
+        description: '$500 upfront then 5 monthly Payments',
         amount: purchaseAmount,
         stages: [
             {
@@ -77,7 +77,7 @@ const examples = [
             {
                 amount: -1,
                 description: 'Monthly Payment',
-                duration: 12,
+                duration: 5,
                 frequency: 1,
                 period: 'Month',
                 withdrawDay: 'sale',
@@ -91,7 +91,7 @@ const examples = [
             {
                 amount: -1,
                 description: 'Monthly Payment',
-                duration: 12,
+                duration: 5,
                 frequency: 1,
                 period: 'Month',
                 withdrawDay: 'sale',

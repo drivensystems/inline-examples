@@ -11,6 +11,7 @@ function getVariableStageIndex (stages) {
     return stages.findIndex(stage => stage.amount === -1)
 }
 
+// refer to generateStage.js for examples of parameter values (e.g. stages = array, amount = number”.
 module.exports = function (stages, amount) {
     const result = JSON.parse(JSON.stringify(stages)) // simple deep clone
     if (amount === 0) return result

@@ -85,7 +85,7 @@ const examples = [
         ]
     },
     {
-        description: '5 Monthly Payments with balloon',
+        description: '5 Monthly Payments with $500 Balloon',
         amount: purchaseAmount,
         stages: [
             {
@@ -97,7 +97,7 @@ const examples = [
                 withdrawDay: 'sale',
             },
             {
-                amount: 500, // finish up with a final baloon payment
+                amount: 500, // finish up with a final balloon payment
                 description: 'Balloon',
                 duration: 1,
                 frequency: 1,

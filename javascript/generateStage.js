@@ -11,12 +11,12 @@ const examples = [
         amount: purchaseAmount,
         stages: [
             {
-                amount: -1, // -1 is used in the calc function to breakdown
+                amount: -1, // -1 indicates that this stage will be used to break down the remaining amount
                 description: 'Monthly Payment', // anything helpful to the customer
-                duration: 10, // how many payments?
-                frequency: 1, // how many of the period types to apply
-                period: 'Month',
-                withdrawDay: 'sale',
+                duration: 10, // represents the number of payments
+                frequency: 1, // the period frequency, e.g. 1 = every period, 2 = every second period, etc.
+                period: 'Month', // Day, Week, Month, Year
+                withdrawDay: 'sale', // payments start on agreement date
             }
         ]
     },
@@ -25,10 +25,10 @@ const examples = [
         amount: purchaseAmount,
         stages: [
             {
-                amount: -1, // -1 is used in the calc function to breakdown
-                description: 'Full Payment', // anything helpful to the customer
-                duration: 1, // how many payments?
-                frequency: 1, // how many of the period types to apply
+                amount: -1,
+                description: 'Full Payment',
+                duration: 1,
+                frequency: 1,
                 period: 'Day',
                 withdrawDay: 'sale',
             }
@@ -39,10 +39,10 @@ const examples = [
         amount: purchaseAmount,
         stages: [
             {
-                amount: -1, // -1 is used in the calc function to breakdown
-                description: 'Weekly Payment', // anything helpful to the customer
-                duration: 26, // how many payments?
-                frequency: 1, // how many of the period types to apply
+                amount: -1,
+                description: 'Weekly Payment',
+                duration: 26,
+                frequency: 1,
                 period: 'Week',
                 withdrawDay: 'sale',
             }
@@ -53,10 +53,10 @@ const examples = [
         amount: purchaseAmount,
         stages: [
             {
-                amount: -1, // -1 is used in the calc function to breakdown
-                description: 'Fortnightly Payment', // anything helpful to the customer
-                duration: 13, // how many payments?
-                frequency: 2, // how many of the period types to apply
+                amount: -1,
+                description: 'Fortnightly Payment',
+                duration: 13,
+                frequency: 2,
                 period: 'Week',
                 withdrawDay: 'sale',
             }
@@ -67,21 +67,43 @@ const examples = [
         amount: purchaseAmount,
         stages: [
             {
-                amount: 500, // -1 is used in the calc function to breakdown
-                description: 'Deposit', // anything helpful to the customer
-                duration: 1, // how many payments?
-                frequency: 1, // how many of the period types to apply
+                amount: 500, // We always have a $500 payment upfront
+                description: 'Deposit',
+                duration: 1,
+                frequency: 1,
                 period: 'Month',
                 withdrawDay: 'sale',
             },
             {
-                amount: -1, // -1 is used in the calc function to breakdown
-                description: 'Monthly Payment', // anything helpful to the customer
-                duration: 12, // how many payments?
-                frequency: 1, // how many of the period types to apply
+                amount: -1,
+                description: 'Monthly Payment',
+                duration: 12,
+                frequency: 1,
                 period: 'Month',
                 withdrawDay: 'sale',
             }
+        ]
+    },
+    {
+        description: '5 Monthly Payments with balloon',
+        amount: purchaseAmount,
+        stages: [
+            {
+                amount: -1,
+                description: 'Monthly Payment',
+                duration: 12,
+                frequency: 1,
+                period: 'Month',
+                withdrawDay: 'sale',
+            },
+            {
+                amount: 500, // finish up with a final baloon payment
+                description: 'Balloon',
+                duration: 1,
+                frequency: 1,
+                period: 'Month',
+                withdrawDay: 'sale',
+            },
         ]
     }
 ]

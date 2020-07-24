@@ -157,12 +157,7 @@ if (isset($_POST['submit'])) {
 				margin-left: 300px;
 			}
 
-			#usdAmt {
-				font-size: 0.8em;
-			}
-
 			#button {
-
 				width: 120px;
 				height: 22px;
 				background-color: #78B23F;
